@@ -2,8 +2,10 @@ version: '3'
 
 services:
   unblockneteasemusic:
+    restart: always
     image: nondanee/unblockneteasemusic
     environment:
       NODE_ENV: production
     ports:
-      - 8080:8080
+      - 4567:8080
+    command: "-s -p 8080:8081 -e https://music.163.com"
